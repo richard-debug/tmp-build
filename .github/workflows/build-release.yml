@@ -151,21 +151,12 @@ jobs:
         
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-       
-      - name: Finding failure logs
-        working-directory: logs/package/feeds
-        run: |
-          sed -ne 's!^ *ERROR: package/feeds/\(tailscale[^ ]*\) .*$!\1!p' ../error.txt | sort -u | xargs -r find > ../../../logs.txt
-          cat ../../../logs.txt
-
+   
       - name: Prepare Output Folder
         run: |
           PKG_DIR=${{ steps.get_build_path.outputs.pkg }}/${{ matrix.arch }}
-          LOG_DIR=${{ steps.get_build_path.outputs.log }}/${{ matrix.arch }}
-          mkdir -p dist/$PKG_DIR dist/$LOG_DIR
-
+          mkdir -p dist/$PKG_DIR 
           rsync -av bin/packages/${{ matrix.arch }}/tailscale* dist/$PKG_DIR/
-          rsync -av --files-from=logs.txt logs/package/feeds/ dist/$LOG_DIR/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
