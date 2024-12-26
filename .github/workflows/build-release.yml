@@ -158,6 +158,10 @@ jobs:
           PKG_DIR=${{ steps.get_build_path.outputs.pkg }}/${{ matrix.arch }}
           mkdir -p dist/$PKG_DIR 
           rsync -av bin/packages/${{ matrix.arch }}/tailscale* dist/$PKG_DIR/
+          
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+   
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
