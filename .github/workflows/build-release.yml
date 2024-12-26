@@ -150,7 +150,10 @@ jobs:
           
       - name: List files
         run: ls -la
-          
+        
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+       
       - name: Finding failure logs
         working-directory: logs/package/feeds
         run: |
