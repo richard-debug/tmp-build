@@ -153,9 +153,6 @@ jobs:
       - name: List files
         run: ls -la
         
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-   
       - name: Prepare Output Folder
         run: |
           PKG_DIR=${{ steps.get_build_path.outputs.pkg }}/${{ matrix.arch }}
