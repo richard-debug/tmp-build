@@ -142,8 +142,6 @@ jobs:
         uses: moetayuko/gh-action-sdk@main
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.ref }}
-          EXTRA_FEEDS: >-
-            src-git|tailscale|https://github.com/tailscale/tailscale^${{ steps.ver.outputs.tailscale }}
           V: s
           IGNORE_ERRORS: n m y
           BUILD_LOG: 1
