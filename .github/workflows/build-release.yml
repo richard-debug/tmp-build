@@ -139,9 +139,7 @@ jobs:
         run: |
           ./build_dist.sh --extra-small tailscale.com/cmd/tailscale
           ./build_dist.sh --extra-small tailscale.com/cmd/tailscaled
-          mkdir -p bin
-          mv tailscale tailscaled bin/
-
+          
       - name: Build OpenWRT Package
         uses: moetayuko/gh-action-sdk@main
         env:
