@@ -2,8 +2,8 @@
   "version": 2,
   "data": {
     "tailscale": {
-      "version": "6db220b47834d8c45fd2b9ab34eff860aa5a6d72",
-      "revision": "6db220b47834d8c45fd2b9ab34eff860aa5a6d72"
+      "version": "c81a95dd53d905b95c67568dd520db16ee1bdb8a",
+      "revision": "c81a95dd53d905b95c67568dd520db16ee1bdb8a"
     }
   }
 }
